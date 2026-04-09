@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import LinkedIn from './icons/LinkedIn'
+import MadridPopup from './MadridPopup'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: 'blur(20px)' },
@@ -49,7 +50,7 @@ export default function Hero() {
           className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10"
         >
           A Product Designer / Software Engineer living at the intersection of
-          design and engineering. Now building from Madrid, shipping globally.
+          design and engineering. Now building from <MadridPopup />, shipping globally.
         </motion.p>
 
         <motion.div
@@ -85,8 +86,8 @@ export default function Hero() {
             Let's connect
             <motion.span
               variants={{
-                idle: { scale: 1, rotate: 0 },
-                hovered: { scale: 1.4, rotate: -15 },
+                idle: { scale: 1 },
+                hovered: { scale: 1.4 },
               }}
               transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
               className="inline-flex"
