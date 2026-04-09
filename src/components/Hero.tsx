@@ -19,7 +19,8 @@ export default function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.7])
-  const blur = useTransform(scrollYProgress, [0.05, 0.5], [0, 6])
+  const blur = useTransform(scrollYProgress, [0.2, 0.5], [0, 6])
+  const scale = useTransform(scrollYProgress, [0.05, 1], [1, .8])
 
   return (
     <section
@@ -27,7 +28,7 @@ export default function Hero() {
       className="min-h-screen w-full bg-gray-900 flex items-center justify-center px-8 md:px-20 overflow-hidden"
     >
       <motion.div
-        style={{ y, opacity, filter: useTransform(blur, (v) => `blur(${v}px)`) }}
+        style={{ y, opacity, filter: useTransform(blur, (v) => `blur(${v}px)`), scale }}
         className="max-w-3xl mx-auto w-full"
         initial="hidden"
         animate="visible"
