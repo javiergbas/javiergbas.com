@@ -1,4 +1,6 @@
 import Hero from './components/Hero'
+import Section from './components/Section'
+import Timeline from './components/Timeline'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -30,13 +32,9 @@ export default function App() {
           </div>
         </Section>
 
-        <Section title="Work">
-          <p className="text-gray-600 leading-relaxed">
-            {/* Fill in later */}
-          </p>
-        </Section>
+        <Timeline />
 
-        <Section title="Experiments">
+        <Section title="Playground">
           <p className="text-gray-600 leading-relaxed">
             {/* Fill in later */}
           </p>
@@ -54,16 +52,4 @@ export default function App() {
   )
 }
 
-const Section = ({ title, children }: { title?: string; children: React.ReactNode }) => (
-  <section>
-    {title && (
-      <h2
-        className="text-3xl md:text-4xl text-gray-900 mb-6"
-        style={{ fontFamily: "'Lora', Georgia, serif" }}
-      >
-        {title}
-      </h2>
-    )}
-    {children}
-  </section>
-)
+

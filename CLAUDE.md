@@ -14,7 +14,7 @@ Personal website for Javier Gutiérrez, a product designer / software engineer b
 
 Loaded via Google Fonts in `index.html`:
 
-- **Lora** (italic, 400/500/600) — headings and section titles, applied via `style={{ fontFamily: "'Lora', Georgia, serif" }}`
+- **Libre Baskerville** (400/700, italic 400) — headings and section titles, applied via `style={{ fontFamily: "'Libre Baskerville', Georgia, serif" }}`
 - **Plus Jakarta Sans** (300/400/500) — body text, set as `--font-sans` CSS variable in `index.css`
 
 ## Component conventions

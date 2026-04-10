@@ -38,7 +38,7 @@ export default function Hero() {
           variants={fadeUp}
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-5xl md:text-7xl lg:text-7xl text-white leading-tight mb-8"
-          style={{ fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontFamily: "'Libre Baskerville', Georgia, serif" }}
         >
           Hola 👋
           <br />
