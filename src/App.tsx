@@ -7,21 +7,13 @@ export default function App() {
       <Hero />
 
       <main className="max-w-3xl mx-auto px-8 md:px-6 py-24 space-y-24">
-        <Section title="About me">
-          <div className="space-y-4 text-gray-600 leading-relaxed">
+        <Section>
+          <div className="text-lg space-y-4 text-gray-600 leading-relaxed">
             <p>
-              I'm a hybrid between a product designer and software engineer —
-              and I genuinely love living in that intersection. It means I can
-              sit in a conversation about business needs, contribute to design
-              explorations, and then go build the thing. I find that moving
-              fluidly between those disciplines makes for better products and
-              more honest collaboration.
+              I've spent fifteen years building digital products moving between design and engineering, and I love both too much to choose.
             </p>
             <p>
-              I've been working in tech for 15 years, across both design and
-              development. Over time I've come to care less about titles and
-              more about outcomes: does it solve a real problem, does it feel
-              good to use, and is it built well enough to last?
+              I design and build experiences that feel considered, the kind where the details matter.
             </p>
             <p>
               These days I'm based in Madrid, working remotely for{' '}
@@ -33,8 +25,7 @@ export default function App() {
               >
                 Findem.ai
               </a>
-              . I'm also leaning into AI — not just as a tool, but as a way to
-              build faster and better than I could before.
+              ,  and excited about what AI is changing in how we design and build
             </p>
           </div>
         </Section>
@@ -63,16 +54,16 @@ export default function App() {
   )
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section>
+const Section = ({ title, children }: { title?: string; children: React.ReactNode }) => (
+  <section>
+    {title && (
       <h2
         className="text-3xl md:text-4xl text-gray-900 mb-6"
         style={{ fontFamily: "'Lora', Georgia, serif" }}
       >
         {title}
       </h2>
-      {children}
-    </section>
-  )
-}
+    )}
+    {children}
+  </section>
+)
