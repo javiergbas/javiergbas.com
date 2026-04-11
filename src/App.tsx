@@ -1,6 +1,7 @@
 import Hero from './components/Hero'
 import Section from './components/Section'
 import Timeline from './components/Timeline'
+import Bookshelf from './components/Bookshelf'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -40,11 +41,7 @@ export default function App() {
           </p>
         </Section>
 
-        <Section title="Reads">
-          <p className="text-gray-600 leading-relaxed">
-            {/* Fill in later */}
-          </p>
-        </Section>
+        <Bookshelf />
       </main>
 
       <Footer />

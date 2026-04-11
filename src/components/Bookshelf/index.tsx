@@ -1,0 +1,36 @@
+import { useState } from "react";
+import { AnimatePresence } from "motion/react";
+import Section from "../Section";
+import BookCard from "./BookCard";
+import BookOverlay from "./BookOverlay";
+import { books, type Book } from "./types";
+
+const Bookshelf = () => {
+  const [selected, setSelected] = useState<Book | null>(null);
+
+  return (
+    <Section title="On my bookshelf">
+      <p className="text-gray-500 leading-relaxed mb-8 -mt-2">
+        Some of the books that have stuck with me.
+      </p>
+
+      <div className="grid items-start grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6">
+        {books.map((book) => (
+          <BookCard
+            key={book.id}
+            book={book}
+            onClick={() => setSelected(book)}
+          />
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {selected && (
+          <BookOverlay book={selected} onClose={() => setSelected(null)} />
+        )}
+      </AnimatePresence>
+    </Section>
+  );
+};
+
+export default Bookshelf;
