@@ -3,20 +3,20 @@ import getroFlow1 from "../../../assets/work/getro-flow-1.png";
 import getroFlow2 from "../../../assets/work/getro-flow-2.png";
 
 export const GetroFlowBody = (
-  <div className="space-y-3">
-    <div className="border-t border-gray-200 pt-5">
-      <p className="leading-relaxed">
+  <div>
+    <div className="space-y-1 border-t border-gray-200 pt-5 mb-5 text-sm leading-relaxed">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Team:</span> 1 UX
         researcher, 2 PMs, 1 engineer, 1 designer (me).
       </p>
-      <p className="leading-relaxed">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Tools:</span> Miro, Figma,
         React.
       </p>
     </div>
 
     <ContentHeading title="Problem Statement" />
-    <p className="text-gray-600 leading-relaxed">
+    <p>
       Hiring leads at early stage projects have too little time, poor (or
       nonexistent!) tools and often too few skills, to hire well – let alone
       build a better hiring system. This leaves them in danger of not keeping up

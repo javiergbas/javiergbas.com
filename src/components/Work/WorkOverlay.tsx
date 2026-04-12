@@ -50,14 +50,16 @@ const WorkOverlay = ({
         >
           <X size={16} strokeWidth={2.5} />
         </button>
-        <h1
-          className="text-3xl font-bold text-gray-900"
-          style={{ fontFamily: "--font-serif" }}
-        >
-          {title}
-        </h1>
-        <div className="text-lg text-gray-600 mt-1">{desc}</div>
-        {workItem.body && <div className="mt-6">{workItem.body}</div>}
+        <article className="prose mx-auto">
+          <h1
+            className="text-3xl font-bold text-gray-900 mb-0"
+            style={{ fontFamily: "--font-serif" }}
+          >
+            {title}
+          </h1>
+          <div className="text-lg text-gray-600 mt-1">{desc}</div>
+          {workItem.body && <div className="mt-6">{workItem.body}</div>}
+        </article>
       </motion.div>
     </motion.div>
   );

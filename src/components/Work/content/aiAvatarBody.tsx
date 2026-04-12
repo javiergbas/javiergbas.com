@@ -4,13 +4,13 @@ import aiAvatar1 from "../../../assets/work/ai-avatar-1.png";
 import aiAvatar2 from "../../../assets/work/ai-avatar-2.png";
 
 export const AiAvatarBody = (
-  <div className="space-y-8">
-    <div className="border-t border-gray-200 pt-5">
-      <p className="text-sm leading-relaxed">
+  <div>
+    <div className="space-y-1 border-t border-gray-200 pt-5 mb-5 text-sm leading-relaxed">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Role:</span> Product
         Designer & Frontend Developer.
       </p>
-      <p className="text-sm leading-relaxed">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Tools:</span> Figma, React,
         SVG animations, Cursor, Claude Code.
       </p>
@@ -39,48 +39,42 @@ export const AiAvatarBody = (
       system.
     </p>
 
-    <div className="space-y-3">
-      <ContentHeading title="The challenge" />
-      <p>
-        AI agents on job boards are new territory. Job seekers have been trained
-        by years of unhelpful chatbots to ignore or distrust anything that looks
-        automated. The challenge wasn't just technical — it was about trust.
-      </p>
-      <p>
-        The agents needed to feel warm and approachable, not robotic. It needed
-        to signal intelligence without feeling cold or corporate. And it needed
-        to earn trust quickly — ideally before the user had typed a single word.
-        Design and motion had a central role in making that happen.
-      </p>
-    </div>
+    <ContentHeading title="The challenge" />
+    <p>
+      AI agents on job boards are new territory. Job seekers have been trained
+      by years of unhelpful chatbots to ignore or distrust anything that looks
+      automated. The challenge wasn't just technical — it was about trust.
+    </p>
+    <p>
+      The agents needed to feel warm and approachable, not robotic. It needed to
+      signal intelligence without feeling cold or corporate. And it needed to
+      earn trust quickly — ideally before the user had typed a single word.
+      Design and motion had a central role in making that happen.
+    </p>
 
-    <div>
-      <ContentHeading title="The avatars" />
-      <p>
-        The avatar is the first thing a user sees. It needed to communicate
-        personality at a glance: alive, attentive, and a little warm. A circular
-        face with expressive eyes and a simple smile — friendly without being
-        cartoonish.
-      </p>
+    <ContentHeading title="The avatars" />
+    <p>
+      The avatar is the first thing a user sees. It needed to communicate
+      personality at a glance: alive, attentive, and a little warm. A circular
+      face with expressive eyes and a simple smile — friendly without being
+      cartoonish.
+    </p>
+    <figure>
       <img
         src={aiAvatar1}
         alt="Avatar design explorations"
-        className="w-full rounded-lg border border-gray-200 mt-6"
+        className="w-full rounded-lg border border-gray-200"
       />
-      <p className="text-sm text-gray-600 mt-2">
-        Early explorations of the avatar design.
-      </p>
-    </div>
+      <figcaption>Early explorations of the avatar design.</figcaption>
+    </figure>
 
-    <div>
+    <figure>
       <img
         src={aiAvatar2}
         alt="Avatars in different contexts"
-        className="w-full rounded-lg border border-gray-200 mt-6"
+        className="w-full rounded-lg border border-gray-200"
       />
-      <p className="text-sm text-gray-600 mt-2">
-        Avatars used in different contexts
-      </p>
-    </div>
+      <figcaption>Avatars used in different contexts.</figcaption>
+    </figure>
   </div>
 );
