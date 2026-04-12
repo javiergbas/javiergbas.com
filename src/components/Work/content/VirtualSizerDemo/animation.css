@@ -1,0 +1,356 @@
+.animation-frame {
+  width: 390px;
+  height: 360px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-1 {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: left;
+  transition: all 0.5s ease;
+}
+
+.card-2 {
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  left: -50%;
+  transform: translateX(-50%);
+  transform-origin: left;
+  transition: all 0.5s ease;
+}
+
+.card-3 {
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  right: -50%;
+  transform: translateX(-50%);
+  transform-origin: left;
+  transition: all 0.5s ease;
+}
+
+.hand-container {
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.hand-container .ring {
+  position: absolute;
+  left: 62px;
+  top: 70px;
+  box-shadow: none;
+}
+
+.animation-frame.step-1 .card-1,
+.animation-frame.step-1 .card-2,
+.animation-frame.step-1 .card-3 {
+  transform: translateX(-50%) rotate(-8deg);
+  opacity: 1;
+}
+
+.animation-frame.step-1 .card-2 {
+  left: 50%;
+  transform: translateX(-75%) rotate(-8deg);
+}
+
+.animation-frame.step-1 .card-3 {
+  right: -50%;
+  transform: translateX(-100%) rotate(-8deg);
+}
+
+.animation-frame.step-2 .card-1,
+.animation-frame.step-3 .card-1,
+.animation-frame.step-4 .card-1,
+.animation-frame.step-5 .card-1,
+.animation-frame.step-6 .card-1 {
+  transform: scale(0.6) translateX(-50%);
+  top: 10px;
+}
+
+.animation-frame.step-3 .hand-container,
+.animation-frame.step-4 .hand-container,
+.animation-frame.step-5 .hand-container,
+.animation-frame.step-6 .hand-container {
+  opacity: 1;
+  bottom: 10px;
+}
+
+.animation-frame.step-4 .ring {
+  animation: ringOut 3s infinite ease-in-out;
+  animation-delay: 250ms;
+}
+
+.animation-frame.step-3 .ring,
+.animation-frame.step-5 .ring {
+  opacity: 0;
+}
+
+@keyframes ringOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    left: 40px;
+    top: -20px;
+  }
+  80% {
+    opacity: 0;
+    left: 62px;
+    top: 70px;
+  }
+  100% {
+    opacity: 1;
+    left: 62px;
+    top: 70px;
+  }
+}
+
+/* PHONE */
+
+.phone-container {
+  position: absolute;
+  top: 100px;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.phone-container .level-bar-top {
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  background-color: var(--gray-200);
+  border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 44px;
+}
+
+.phone-container .level-bar-top-buble {
+  position: relative;
+  transition: all 0.1s ease;
+  width: 24px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: #00eb66;
+  margin: auto;
+}
+
+.phone-container .level-bar-right {
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background-color: var(--gray-200);
+  border-radius: 8px;
+  top: 140px;
+  left: 274px;
+  display: flex;
+  align-items: center;
+}
+
+.phone-container .crosshair-reference,
+.phone-container .crosshair-level {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.phone-container .level-bar-right-buble {
+  position: relative;
+  transition: all 0.1s ease;
+  width: 8px;
+  height: 24px;
+  border-radius: 8px;
+  background-color: #00eb66;
+}
+
+.animation-frame.step-5 .phone-container {
+  opacity: 1;
+  top: -20px;
+}
+
+.animation-frame.step-5 .phone-container {
+  animation: phoneRotation 4s ease infinite;
+  animation-delay: 800ms;
+}
+
+.animation-frame.step-5 .level-bar-top-buble {
+  animation: phoneLevelTopBuuble 4s ease infinite;
+  animation-delay: 800ms;
+}
+
+.animation-frame.step-5 .level-bar-right-buble {
+  animation: phoneLevelRightBuuble 4s ease infinite;
+  animation-delay: 800ms;
+}
+
+.animation-frame.step-5 .phone-shutter {
+  animation: phoneShutterEnable 4s ease infinite;
+  animation-delay: 800ms;
+  transition: all 0.1s ease;
+}
+
+@keyframes phoneRotation {
+  0% {
+    transform: translateX(-50%) rotate3d(0, 0, 0);
+  }
+  15% {
+    transform: translateX(-50%) rotateX(20deg) rotateY(20deg);
+  }
+  35% {
+    transform: translateX(-50%) rotate3d(0, 0, 0);
+  }
+  60% {
+    transform: translateX(-50%) rotate3d(0, 0, 0);
+  }
+}
+
+@keyframes phoneShutterEnable {
+  0% {
+    opacity: 0.5;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  35% {
+    opacity: 0.5;
+  }
+  36% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes phoneLevelTopBuuble {
+  0% {
+    background-color: var(--red-300);
+    left: 0;
+  }
+  17% {
+    background-color: var(--red-300);
+    left: -10px;
+  }
+  35% {
+    background-color: var(--red-300);
+    left: 0;
+  }
+  36% {
+    background-color: var(--green-500);
+    left: 0;
+  }
+  100% {
+    background-color: var(--green-500);
+    left: 0;
+  }
+}
+
+@keyframes phoneLevelRightBuuble {
+  0% {
+    background-color: var(--red-300);
+    top: 0;
+  }
+  5% {
+    background-color: var(--red-300);
+    top: 10px;
+  }
+  35% {
+    background-color: var(--red-300);
+    top: 0;
+  }
+  36% {
+    background-color: var(--green-500);
+    top: 0;
+  }
+  100% {
+    background-color: var(--green-500);
+    top: 0;
+  }
+}
+
+.animation-frame.step-5 .crosshair-reference .crosshair-path {
+  animation: crosshairReferencePathAnimation 4s ease infinite;
+  animation-delay: 800ms;
+  fill: #303436;
+}
+
+.animation-frame.step-5 .crosshair-level {
+  animation: crosshairLevelAnimation 4s ease infinite;
+  animation-delay: 800ms;
+}
+
+.animation-frame.step-5 .crosshair-level .crosshair-path {
+  fill: #aaa;
+}
+
+@keyframes crosshairReferencePathAnimation {
+  0% {
+    fill: var(--green-500);
+  }
+  5% {
+    fill: var(--red-300);
+  }
+  32% {
+    fill: var(--red-300);
+  }
+  36% {
+    fill: var(--green-500);
+  }
+  100% {
+    fill: var(--green-500);
+  }
+}
+
+@keyframes crosshairLevelAnimation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  15% {
+    transform: translate(-80%, -80%);
+  }
+  35% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.animation-frame.step-5 .card-container,
+.animation-frame.step-5 .hand-container {
+  animation: takePhotoAnimation 4s ease infinite;
+  animation-delay: 800ms;
+}
+
+@keyframes takePhotoAnimation {
+  0% {
+    opacity: 1;
+  }
+  78% {
+    opacity: 1;
+  }
+  83% {
+    opacity: 0.5;
+  }
+  88% {
+    opacity: 1;
+  }
+}

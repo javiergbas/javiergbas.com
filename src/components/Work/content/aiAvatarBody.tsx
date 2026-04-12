@@ -8,11 +8,11 @@ export const AiAvatarBody = (
     <div className="border-t border-gray-200 pt-5">
       <p className="text-sm leading-relaxed">
         <span className="font-medium text-gray-900">Role:</span> Product
-        Designer & Frontend Developer
+        Designer & Frontend Developer.
       </p>
       <p className="text-sm leading-relaxed">
         <span className="font-medium text-gray-900">Tools:</span> Figma, React,
-        SVG animations, Cursor, Claude Code
+        SVG animations, Cursor, Claude Code.
       </p>
     </div>
 
@@ -23,6 +23,7 @@ export const AiAvatarBody = (
       been possible before: bringing Findem's AI agents directly into Getro's
       products.
     </p>
+
     <p>
       On one side we have the job seekers visiting our job boards. Instead of
       job seekers browsing alone, an AI agent could now surface relevant roles,
@@ -78,7 +79,7 @@ export const AiAvatarBody = (
         className="w-full rounded-lg border border-gray-200 mt-6"
       />
       <p className="text-sm text-gray-600 mt-2">
-        Avatars in different contexts
+        Avatars used in different contexts
       </p>
     </div>
   </div>

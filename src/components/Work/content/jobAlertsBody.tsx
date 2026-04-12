@@ -9,7 +9,7 @@ export const JobAlertsBody = (
     <div className="border-t border-gray-200 pt-5">
       <p className="text-sm leading-relaxed">
         <span className="font-medium text-gray-900">Team:</span> 1 PM, 2
-        engineers, 1 designer (me)
+        engineers, 1 designer (me).
       </p>
       <p className="text-sm leading-relaxed">
         <span className="font-medium text-gray-900">Tools:</span> Jira, Miro,
@@ -17,7 +17,7 @@ export const JobAlertsBody = (
       </p>
     </div>
 
-    <div>
+    <div className="space-y-3">
       <ContentHeading title="Introduction" />
       <p className="text-xl font-medium text-gray-800 leading-relaxed my-10 px-10">
         Job alerts allow job seekers to subscribe to get email alerts when new

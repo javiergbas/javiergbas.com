@@ -3,7 +3,7 @@ import getroFlow1 from "../../../assets/work/getro-flow-1.png";
 import getroFlow2 from "../../../assets/work/getro-flow-2.png";
 
 export const GetroFlowBody = (
-  <div className="space-y-4">
+  <div className="space-y-3">
     <div className="border-t border-gray-200 pt-5">
       <p className="leading-relaxed">
         <span className="font-medium text-gray-900">Team:</span> 1 UX
