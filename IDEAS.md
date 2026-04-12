@@ -101,3 +101,122 @@ The current bookshelf works but feels plain. Make it feel like a real shelf you 
 - A faint spine-like left edge on each card (1–2px gradient or border) to reinforce the book metaphor
 - On overlay close, the book "falls back" into the shelf with a slight overshoot spring
 - Page-turn sound (optional, off by default) — a single soft rustle on open
+
+---
+
+## Dark mode
+
+Support a dark color scheme that feels intentional, not just inverted.
+
+**Behaviour**
+
+- Follows system preference via `prefers-color-scheme` by default
+- Optional manual toggle (sun/moon icon, unobtrusive placement — footer or fixed corner)
+- Persists preference to `localStorage`
+
+**Design notes**
+
+- Hero is already `bg-gray-900` so it naturally works in dark mode — the transition should be seamless there
+- Content sections need a true dark background (not pure black — something like `gray-950` or `gray-900`) with adjusted text contrast
+- Book covers and work images should keep their natural colors — avoid inverting them
+- The timeline line gradient (`#51a2ff → #c800de`) already reads well on dark backgrounds
+
+**Implementation**
+
+- Add `dark` class to `<html>` via Tailwind's `darkMode: 'class'` strategy
+- Use `dark:` variants on all color utilities throughout components
+- `useReducedMotion` already in place — pair dark mode toggle with a smooth crossfade transition
+
+---
+
+## Hero background animation
+
+The hero is clean but the `bg-gray-900` is flat. A subtle animated background could add depth without competing with the text.
+
+**Option A — Animated mesh gradient**
+- 3–4 large blurred color orbs (`blur-3xl`, low opacity) drifting slowly across the background
+- Colors pulled from the site palette: deep blue, violet, a hint of pink
+- Each orb moves on its own slow looping path via `animate` with `repeat: Infinity`
+- Feels alive without being distracting — the kind of thing you notice after 5 seconds
+
+**Option B — Aurora / light leak**
+- A single wide gradient bar that slowly shifts hue across the top of the hero
+- Think northern lights — horizontal bands of color, very low opacity, animated with `useTransform` tied to time
+- Pairs well with the existing parallax scroll effect
+
+**Option C — Parallax retro grid**
+- A perspective CSS grid (vanishing point at center) that moves slightly with scroll or mouse position
+- Retro sci-fi feel — Tron / synthwave
+- Could use a subtle `repeating-linear-gradient` for the grid lines, animated with `useScroll`
+- Works best if the rest of the site leans into that aesthetic — might clash with the warm serif type
+
+**Option D — Particle field**
+- Small floating dots or crosses (✦) scattered across the background, drifting slowly
+- Each particle has a randomized position, opacity, and drift speed
+- Rendered as absolutely-positioned `motion.div`s or on a `<canvas>` for performance
+- The ✦ symbol already appears in the site — could reinforce the motif
+
+**Option E — Mouse-tracking light**
+- A soft radial gradient that follows the cursor position with a slight lag
+- Like a flashlight illuminating the dark background
+- Implemented with `useMotionValue` + `useSpring` for the smooth lag
+- Subtle: the gradient is very large and very low opacity — more felt than seen
+
+**General notes**
+- Whatever is chosen must not reduce text legibility — test contrast carefully
+- Keep it off on `prefers-reduced-motion`
+- The animation should loop seamlessly and never feel urgent or fast
+
+---
+
+## Work — Embedded Figma prototypes (Clean View)
+
+Instead of only showing static screenshots in work item overlays, embed live Figma prototypes so visitors can interact with the actual designs.
+
+**Approach**
+
+- Use the Figma Prototype Clean View embed URL (`?embed_host=share&kind=proto&chrome=0`) which strips the Figma toolbar and shows just the prototype canvas
+- Render inside an `<iframe>` in the work item overlay body, sized to fit the panel
+- Add a fallback screenshot for cases where the prototype is not publicly accessible or on slow connections
+
+**UX details**
+
+- Show a "Try it" or "Open prototype" label above the iframe so visitors know it's interactive
+- The iframe should have a fixed aspect ratio (e.g. `aspect-video` or mobile frame if it's a mobile prototype)
+- Optionally wrap in a device mockup (browser chrome or phone frame) to give it context
+- Include a link to open the prototype fullscreen in Figma for visitors who want to explore further
+
+**Implementation notes**
+
+- Add an optional `figmaEmbed?: string` field to the `WorkItem` type (the embed URL)
+- In the overlay body, render the iframe when `figmaEmbed` is present
+- Use `loading="lazy"` on the iframe to avoid blocking the page
+
+---
+
+## AI Avatar — richer animations
+
+The live demo currently shows the avatar at rest. There's a lot more to explore to make it feel truly alive.
+
+**More states**
+
+- `Waiting` — subtle eye movement, glancing left/right occasionally, like it's aware but not demanding attention
+- `Thinking` — existing rotating ring + eyes shifting up, but could add a slow "breathing" scale and a slight head tilt via SVG transform
+- `Listening` — a gentle inward pulse, mouth closed, eyes slightly wider — attentive, not eager
+- `Responding` — mouth animation synced to a visual rhythm, ripple rings, slightly elevated energy
+- `Celebrating` — for moments like "we found a match" — a quick pop + sparkle burst
+
+**Sparkles**
+
+- The orbiting glow blobs give warmth, but small animated ✦ sparkles around the avatar would add magic
+- A few tiny sparkles that appear and fade at random positions around the circle, with staggered timing
+- Could intensify during the `Responding` or `Celebrating` states and calm down at `Idle`
+- Implemented as absolutely positioned `motion.div`s with randomized `opacity` and `scale` animations
+
+**Astronaut avatar — floating in space**
+
+- The astronaut should feel weightless — a slow, gentle float animation (up/down sine wave, slight rotation) that loops forever
+- Add parallax depth: the astronaut moves slightly against a subtle star field background when the user moves the mouse
+- Stars in the background could be tiny `motion.div`s or a canvas, drifting slowly to give a sense of movement through space
+- Occasional slow tumble (small `rotateZ` oscillation) to reinforce zero-gravity
+- The helmet visor could have a soft reflection shimmer that moves independently
