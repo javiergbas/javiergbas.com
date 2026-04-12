@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
+import { track } from "@vercel/analytics";
 import Section from "../Section";
 import { type WorkItem, workItems } from "./types";
 import WorkCard from "./WorkCard";
@@ -12,7 +13,7 @@ const Work = () => {
     <Section title="Some stuff I've worked on">
       <div className="grid md:grid-cols-2 gap-6">
         {workItems.map((workItem) => (
-          <WorkCard workItem={workItem} onClick={() => setSelected(workItem)} />
+          <WorkCard workItem={workItem} onClick={() => { track("work_item_open", { id: workItem.id }); setSelected(workItem); }} />
         ))}
       </div>
 

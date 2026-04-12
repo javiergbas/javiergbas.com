@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { track } from "@vercel/analytics";
 import { ArrowUpRight } from "lucide-react";
 import LinkedIn from "./icons/LinkedIn";
 import MadridPopup from "./MadridPopup";
@@ -67,6 +68,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/javiergutierrezbas/"
             target="_blank"
             rel="noreferrer"
+            onClick={() => track("linkedin_click")}
             whileHover="hovered"
             initial="idle"
             animate="idle"

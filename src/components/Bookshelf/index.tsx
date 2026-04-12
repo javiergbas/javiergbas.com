@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
+import { track } from "@vercel/analytics";
 import Section from "../Section";
 import BookCard from "./BookCard";
 import BookOverlay from "./BookOverlay";
@@ -19,7 +20,7 @@ const Bookshelf = () => {
           <BookCard
             key={book.id}
             book={book}
-            onClick={() => setSelected(book)}
+            onClick={() => { track("book_open", { id: book.id }); setSelected(book); }}
           />
         ))}
       </div>

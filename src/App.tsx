@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
 import Timeline from "./components/Timeline";
@@ -44,6 +45,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <Analytics />
     </>
   );
 }
