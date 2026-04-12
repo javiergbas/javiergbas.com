@@ -3,6 +3,7 @@ import getroFlowCover from "../../assets/work/getro-flow.png";
 import jobAlertsCover from "../../assets/work/job-alerts.png";
 import { GetroFlowBody } from "./content/getroFlowBody";
 import { JobAlertsBody } from "./content/jobAlertsBody";
+import { AiAvatarBody } from "./content/aiAvatarBody";
 
 export type WorkItem = {
   id: string;
@@ -14,8 +15,9 @@ export type WorkItem = {
 export const workItems: WorkItem[] = [
   {
     id: "ai-avatar",
-    title: "AI agent avatar",
-    desc: "Designing and building a personality for Getro's AI agent.",
+    title: "AI agent avatars",
+    desc: "Designing and building a personality for Getro's AI agents.",
+    body: AiAvatarBody,
   },
   {
     id: "virtual-sizer",
