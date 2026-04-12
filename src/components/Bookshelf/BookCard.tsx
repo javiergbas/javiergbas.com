@@ -6,13 +6,14 @@ const BookCard = ({ book, onClick }: { book: Book; onClick: () => void }) => (
     layoutId={`card-${book.id}`}
     onClick={onClick}
     className="group text-left w-full focus:outline-none cursor-pointer"
-    whileHover={{ y: -3 }}
-    transition={{ duration: 0.2 }}
   >
     {/* Cover */}
     <motion.div
       layoutId={`cover-${book.id}`}
-      className="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-gray-100 shadow-sm group-hover:shadow-md transition-shadow mb-3"
+      whileHover={{ y: -16, rotate: -3 }}
+      transition={{ type: "spring", stiffness: 350, damping: 22 }}
+      style={{ transformOrigin: "bottom center" }}
+      className="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-gray-100 group-hover:shadow-xl transition-shadow mb-3 cursor-grab"
     >
       <img
         src={coverUrl(book.id)}

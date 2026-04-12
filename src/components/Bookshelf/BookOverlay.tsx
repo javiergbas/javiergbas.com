@@ -38,6 +38,7 @@ const BookOverlay = ({
       {/* Sheet / Panel */}
       <motion.div
         layoutId={`card-${book.id}`}
+        transition={{ type: "spring", stiffness: 320, damping: 28 }}
         className="relative z-10 w-full sm:max-w-2xl bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[92dvh] sm:max-h-[85dvh] flex"
       >
         {/* Close */}
@@ -53,7 +54,8 @@ const BookOverlay = ({
           {/* Cover strip */}
           <motion.div
             layoutId={`cover-${book.id}`}
-            className="relative w-[320px] p-6  overflow-hidden shrink-0 hidden md:block"
+            transition={{ type: "spring", stiffness: 200, damping: 30 }}
+            className="relative w-[320px] p-6 overflow-hidden shrink-0 hidden md:block"
           >
             <img
               src={coverUrl(book.id)}
@@ -70,10 +72,8 @@ const BookOverlay = ({
               >
                 {book.title}
               </h2>
-              <p className="text-sm text-gray-400 mt-1 italic">
-                {book.subtitle}
-              </p>
-              <p className="text-sm text-gray-500 mt-2">by {book.author}</p>
+              <p className="text-gray-400 mt-1 italic">{book.subtitle}</p>
+              <p className="text-gray-500 mt-2">by {book.author}</p>
             </div>
 
             <div className="border-t border-gray-100 pt-5">
