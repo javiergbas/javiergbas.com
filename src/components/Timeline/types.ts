@@ -8,6 +8,12 @@ export type Entry = {
 
 export const entries: Entry[] = [
   { date: "Sep 1986", emoji: "👶", title: "Born in Madrid", type: "life" },
+  {
+    date: "Sep 2004",
+    emoji: "👨‍💻",
+    title: "Started sudying software engineering",
+    type: "work",
+  },
   { date: "Sep 2009", emoji: "🇨🇿", title: "Moved to Prague", type: "life" },
   { date: "Sep 2010", emoji: "🇺🇸", title: "Moved to Chicago", type: "life" },
   {

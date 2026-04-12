@@ -12,7 +12,7 @@ const BookCard = ({ book, onClick }: { book: Book; onClick: () => void }) => (
     {/* Cover */}
     <motion.div
       layoutId={`cover-${book.id}`}
-      className="relative aspect-[2/3] w-full rounded-xl overflow-hidden bg-gray-100 shadow-sm group-hover:shadow-md transition-shadow mb-3"
+      className="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-gray-100 shadow-sm group-hover:shadow-md transition-shadow mb-3"
     >
       <img
         src={coverUrl(book.id)}

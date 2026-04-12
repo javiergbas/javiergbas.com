@@ -18,7 +18,7 @@ const Timeline = () => {
   );
 
   return (
-    <Section title="A bit of my story" ref={ref}>
+    <Section title="A bit about my story" ref={ref}>
       <div className="relative">
         {/* Vertical center line */}
         <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-gray-200" />
