@@ -122,7 +122,7 @@ export const JobAlertsBody = (
         alt="Job alerts scroll issue"
         className="w-full rounded-lg border border-gray-200"
       />
-      <p className="mt-2">Job alerts scroll issue</p>
+      <p className="text-sm text-gray-600 mt-2">Job alerts scroll issue</p>
     </div>
 
     <div>
@@ -197,7 +197,9 @@ export const JobAlertsBody = (
           alt="Job alerts iteration 1"
           className="rounded-lg border border-gray-200"
         />
-        <p className="mt-2">Explorations to find a better place for the CTA.</p>
+        <p className="text-sm text-gray-600 mt-2">
+          Explorations to find a better place for the CTA.
+        </p>
       </div>
       <div className="w-full md:w-1/3">
         <img
@@ -205,7 +207,7 @@ export const JobAlertsBody = (
           alt="Job alerts iteration 2"
           className="rounded-lg border border-gray-200"
         />
-        <p className="mt-2">
+        <p className="text-sm text-gray-600 mt-2">
           Explorations to make sure the CTA is visible as the user scrolls.
         </p>
       </div>
@@ -215,7 +217,7 @@ export const JobAlertsBody = (
           alt="Job alerts iteration 3"
           className="rounded-lg border border-gray-200"
         />
-        <p className="mt-2">
+        <p className="text-sm text-gray-600 mt-2">
           Making sure the new navbar elements fit in every scenario.
         </p>
       </div>

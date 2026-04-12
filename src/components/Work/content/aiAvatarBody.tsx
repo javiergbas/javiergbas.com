@@ -11,7 +11,8 @@ export const AiAvatarBody = (
         Designer & Frontend Developer
       </p>
       <p className="text-sm leading-relaxed">
-        <span className="font-medium text-gray-900">Tools:</span> Figma, React, SVG animations
+        <span className="font-medium text-gray-900">Tools:</span> Figma, React,
+        SVG animations, Cursor, Claude Code
       </p>
     </div>
 

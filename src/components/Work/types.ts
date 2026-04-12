@@ -1,9 +1,11 @@
-import aIAvatarCover from "../../assets/work/ai-avatar.png";
-import getroFlowCover from "../../assets/work/getro-flow.png";
-import jobAlertsCover from "../../assets/work/job-alerts.png";
+import aIAvatarCover from "../../assets/work/ai-avatar-cover.png";
+import virtualSizerCover from "../../assets/work/virtual-sizer-cover.png";
+import getroFlowCover from "../../assets/work/getro-flow-cover.png";
+import jobAlertsCover from "../../assets/work/job-alerts-cover.png";
 import { GetroFlowBody } from "./content/getroFlowBody";
 import { JobAlertsBody } from "./content/jobAlertsBody";
 import { AiAvatarBody } from "./content/aiAvatarBody";
+import { VirtualSizerBody } from "./content/virtualSizerBody";
 
 export type WorkItem = {
   id: string;
@@ -21,8 +23,9 @@ export const workItems: WorkItem[] = [
   },
   {
     id: "virtual-sizer",
-    title: "Virtual sizer",
-    desc: "Designing and prototyping a tool that measures your ring size with just one picture.",
+    title: "Ring sizing tool",
+    desc: "A tool for online ring stores that measures your ring size from a single photo.",
+    body: VirtualSizerBody,
   },
   {
     id: "job-alerts",
@@ -40,7 +43,7 @@ export const workItems: WorkItem[] = [
 
 const coverById: Record<string, string> = {
   "ai-avatar": aIAvatarCover,
-  "virtual-sizer": "",
+  "virtual-sizer": virtualSizerCover,
   "getro-flow": getroFlowCover,
   "job-alerts": jobAlertsCover,
 };
