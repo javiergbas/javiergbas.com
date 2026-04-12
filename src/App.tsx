@@ -1,8 +1,9 @@
-import Hero from './components/Hero'
-import Section from './components/Section'
-import Timeline from './components/Timeline'
-import Bookshelf from './components/Bookshelf'
-import Footer from './components/Footer'
+import Hero from "./components/Hero";
+import Section from "./components/Section";
+import Timeline from "./components/Timeline";
+import Work from "./components/Work";
+import Bookshelf from "./components/Bookshelf";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -13,13 +14,15 @@ export default function App() {
         <Section>
           <div className="text-lg space-y-4 text-gray-600 leading-relaxed">
             <p>
-              I've spent fifteen years building digital products moving between design and engineering, and I love both too much to choose.
+              I've spent fifteen years building digital products moving between
+              design and engineering, and I love both too much to choose.
             </p>
             <p>
-              I design and build experiences that feel considered, the kind where the details matter.
+              I design and build experiences that feel considered, the kind
+              where the details matter.
             </p>
             <p>
-              These days I'm based in Madrid, working remotely for{' '}
+              These days I'm based in Madrid, working remotely for{" "}
               <a
                 href="https://findem.ai"
                 target="_blank"
@@ -28,25 +31,19 @@ export default function App() {
               >
                 Findem.ai
               </a>
-              ,  and excited about what AI is changing in how we design and build
+              , and excited about what AI is changing in how we design and build
             </p>
           </div>
         </Section>
 
         <Timeline />
 
-        <Section title="Playground">
-          <p className="text-gray-600 leading-relaxed">
-            {/* Fill in later */}
-          </p>
-        </Section>
+        <Work />
 
         <Bookshelf />
       </main>
 
       <Footer />
     </>
-  )
+  );
 }
-
-
