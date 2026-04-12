@@ -1,5 +1,12 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useAnimationFrame,
+  useReducedMotion,
+} from "motion/react";
 import { track } from "@vercel/analytics";
 import { ArrowUpRight } from "lucide-react";
 import LinkedIn from "./icons/LinkedIn";
@@ -23,11 +30,55 @@ export default function Hero() {
   const blur = useTransform(scrollYProgress, [0.2, 0.5], [0, 6]);
   const scale = useTransform(scrollYProgress, [0.05, 1], [1, 0.8]);
 
+  // Aurora
+  const prefersReduced = useReducedMotion();
+  const t = useMotionValue(0);
+  useAnimationFrame((time) => {
+    if (!prefersReduced) t.set(time / 100);
+  });
+  const b1x = useTransform(t, (v) => `${Math.sin(v * 0.07) * 10}%`);
+  const b1o = useTransform(t, (v) => 0.14 + Math.sin(v * 0.13) * 0.05);
+  const b2x = useTransform(t, (v) => `${Math.sin(v * 0.05 + 1.5) * 14}%`);
+  const b2o = useTransform(t, (v) => 0.1 + Math.sin(v * 0.11 + 1) * 0.04);
+  const b3x = useTransform(t, (v) => `${Math.sin(v * 0.09 + 3) * 8}%`);
+  const b3o = useTransform(t, (v) => 0.08 + Math.sin(v * 0.17 + 2) * 0.03);
+
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full bg-gray-900 flex items-center justify-center px-8 md:px-20 overflow-hidden"
+      className="relative min-h-screen w-full bg-gray-900 flex items-center justify-center px-8 md:px-20 overflow-hidden"
     >
+      {/* Aurora */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          style={{
+            x: b1x,
+            opacity: b1o,
+            background:
+              "linear-gradient(to right, transparent, #00d4aa 20%, #0066ff 55%, #00d4aa 80%, transparent)",
+          }}
+          className="absolute -top-1/4 -left-[20%] w-[140%] h-[65%] blur-[90px]"
+        />
+        <motion.div
+          style={{
+            x: b2x,
+            opacity: b2o,
+            background:
+              "linear-gradient(to right, transparent, #7c00ff 25%, #cc00ff 60%, transparent)",
+          }}
+          className="absolute top-[25%] -left-[15%] w-[130%] h-[50%] blur-[100px]"
+        />
+        <motion.div
+          style={{
+            x: b3x,
+            opacity: b3o,
+            background:
+              "linear-gradient(to right, transparent, #ff0066 30%, #ff6600 65%, transparent)",
+          }}
+          className="absolute bottom-[-10%] -left-[10%] w-[120%] h-[40%] blur-[110px]"
+        />
+      </div>
+
       <motion.div
         style={{
           y,
