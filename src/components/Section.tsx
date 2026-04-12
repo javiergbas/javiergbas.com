@@ -11,7 +11,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
       {title && (
         <h2
           className="text-2xl md:text-3xl text-gray-900 mb-6"
-          style={{ fontFamily: "'Libre Baskerville', Georgia, serif" }}
+          style={{ fontFamily: "--font-serif" }}
         >
           {title}
         </h2>
