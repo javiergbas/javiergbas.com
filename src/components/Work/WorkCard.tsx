@@ -22,11 +22,11 @@ const WorkCard = ({
         <img
           src={coverImage}
           alt={title}
-          className="w-full mb-2"
+          className="w-full mb-3"
           loading="lazy"
         />
       )}
-      <div className="">
+      <div>
         <h2 className="text-lg font-medium text-gray-900 leading-snug">
           {title}
         </h2>
