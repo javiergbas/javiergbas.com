@@ -1,5 +1,6 @@
 import ContentHeading from "./ContentHeading";
 import AiAvatarDemo from "./AiAvatarDemo";
+import AiAvatarDemo2 from "./aiAvatarDemo2";
 import aiAvatar1 from "../../../assets/work/ai-avatar-1.png";
 import aiAvatar2 from "../../../assets/work/ai-avatar-2.png";
 
@@ -75,8 +76,11 @@ export const AiAvatarBody = (
       <figcaption>Avatars used in different contexts.</figcaption>
     </figure>
 
-    <ContentHeading title="A live version of one of the avatars" />
+    <div className="flex flex-column md:flex-row gap-4 [&>*]:flex-1">
+      <AiAvatarDemo />
+      <AiAvatarDemo2 />
+    </div>
 
-    <AiAvatarDemo />
+    <p className="not-prose text-gray-500 text-sm mt-4">Animated versions</p>
   </div>
 );
