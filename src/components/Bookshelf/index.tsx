@@ -10,17 +10,19 @@ const Bookshelf = () => {
   const [selected, setSelected] = useState<Book | null>(null);
 
   return (
-    <Section title="On my bookshelf">
-      <p className="text-gray-500 leading-relaxed mb-8 -mt-2">
-        Some of the books that have stuck with me.
-      </p>
-
+    <Section
+      title="On my bookshelf"
+      description="Some of the books that have stuck with me."
+    >
       <div className="grid items-start grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6">
         {books.map((book) => (
           <BookCard
             key={book.id}
             book={book}
-            onClick={() => { track("book_open", { id: book.id }); setSelected(book); }}
+            onClick={() => {
+              track("book_open", { id: book.id });
+              setSelected(book);
+            }}
           />
         ))}
       </div>

@@ -32,7 +32,8 @@ export default function App() {
               >
                 Findem.ai
               </a>
-              , and excited about what AI is changing in how we design and build
+              , and excited about what AI is changing in how we design and
+              build.
             </p>
           </div>
         </Section>
