@@ -2,6 +2,9 @@ import cultureMap from "../../assets/books/culture-map.jpg";
 import creativityInc from "../../assets/books/creativity-inc.jpg";
 import playBigger from "../../assets/books/play-bigger.jpg";
 import sapiens from "../../assets/books/sapiens.jpg";
+import factfulness from "../../assets/books/factfulness.jpg";
+import monstruoDeColores from "../../assets/books/monstruo-de-colores.jpg";
+import bookYouWish from "../../assets/books/book-you-wish.jpg";
 
 export type Book = {
   id: string;
@@ -46,6 +49,31 @@ export const books: Book[] = [
     notes:
       "A book about the full history of humanity that somehow makes you question everything about today. What stuck with me most is Harari's idea that what makes us powerful as a species is our ability to believe in shared fictions: money, companies, nations.",
   },
+  {
+    id: "factfulness",
+    title: "Factfulness",
+    subtitle:
+      "Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think",
+    author: "Hans Rosling",
+    notes:
+      "A book that challenges how we see the world. It clearly shows that things are much better than the news and our instincts make us believe, always backed by data.",
+  },
+  {
+    id: "monstruo-de-colores",
+    title: "El monstruo de colores",
+    subtitle: "Popup edition",
+    author: "Anna Llenas",
+    notes:
+      "By far the most beautiful popup book I've seen. The popup elements are just incredible, and beyond that it helps kids understand their feelings in a simple and beautiful way. One of Lucía's favorites!",
+  },
+  {
+    id: "book-you-wish",
+    title: "The Book You Wish Your Parents Had Read",
+    subtitle: "And Your Children Will Be Glad That You Did",
+    author: "Philippa Perry",
+    notes:
+      "A book about how the way we interact with our kids shapes them, and especially how they'll interact with others. It made me reflect a lot on patterns I want to keep and ones I want to break. And not only with my kids, but all the time.",
+  },
 ];
 
 const coverById: Record<string, string> = {
@@ -53,6 +81,9 @@ const coverById: Record<string, string> = {
   "creativity-inc": creativityInc,
   "play-bigger": playBigger,
   sapiens,
+  factfulness,
+  "monstruo-de-colores": monstruoDeColores,
+  "book-you-wish": bookYouWish,
 };
 
 export const coverUrl = (id: string) => coverById[id] ?? "";
