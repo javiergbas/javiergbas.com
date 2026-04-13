@@ -4,8 +4,8 @@ import image1 from "../../../assets/work/virtual-sizer-1.png";
 
 export const VirtualSizerBody = (
   <div className="space-y-8">
-    <div className="border-t border-gray-200 pt-5">
-      <p className="text-sm leading-relaxed">
+    <div className="border-b border-gray-200 pb-5">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Client:</span>{" "}
         <a
           href="https://www.aitaca.io"
@@ -17,11 +17,11 @@ export const VirtualSizerBody = (
         </a>
         .
       </p>
-      <p className="text-sm leading-relaxed">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Role:</span> Freelance
         Product Designer & Frontend Developer.
       </p>
-      <p className="text-sm leading-relaxed">
+      <p className="not-prose">
         <span className="font-medium text-gray-900">Tools:</span> Figma, React,
         CSS animations, Replit.com.
       </p>

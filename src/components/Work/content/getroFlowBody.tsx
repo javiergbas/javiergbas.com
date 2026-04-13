@@ -4,7 +4,7 @@ import getroFlow2 from "../../../assets/work/getro-flow-2.png";
 
 export const GetroFlowBody = (
   <div>
-    <div className="space-y-1 border-t border-gray-200 pt-5 mb-5 text-sm leading-relaxed">
+    <div className="border-b border-gray-200 pb-5">
       <p className="not-prose">
         <span className="font-medium text-gray-900">Team:</span> 1 UX
         researcher, 2 PMs, 1 engineer, 1 designer (me).

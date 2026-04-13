@@ -5,7 +5,7 @@ import aiAvatar2 from "../../../assets/work/ai-avatar-2.png";
 
 export const AiAvatarBody = (
   <div>
-    <div className="space-y-1 border-t border-gray-200 pt-5 mb-5 text-sm leading-relaxed">
+    <div className="border-b border-gray-200 pb-5">
       <p className="not-prose">
         <span className="font-medium text-gray-900">Role:</span> Product
         Designer & Frontend Developer.
@@ -15,8 +15,6 @@ export const AiAvatarBody = (
         SVG animations, Cursor, Claude Code.
       </p>
     </div>
-
-    <AiAvatarDemo />
 
     <p className="text-xl font-medium text-gray-800 leading-relaxed my-10 px-10">
       When Findem acquired Getro, it opened the door to something that hadn't
@@ -76,5 +74,9 @@ export const AiAvatarBody = (
       />
       <figcaption>Avatars used in different contexts.</figcaption>
     </figure>
+
+    <ContentHeading title="A live version of one of the avatars" />
+
+    <AiAvatarDemo />
   </div>
 );

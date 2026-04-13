@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import { X } from "lucide-react";
-import { type WorkItem } from "./types";
+import { type WorkItem, coverUrl } from "./types";
 
 const WorkOverlay = ({
   workItem,
@@ -11,6 +11,7 @@ const WorkOverlay = ({
   onClose: () => void;
 }) => {
   const { id, title, desc } = workItem;
+  const coverImage = coverUrl(workItem.id);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -51,13 +52,28 @@ const WorkOverlay = ({
           <X size={16} strokeWidth={2.5} />
         </button>
         <article className="prose mx-auto">
-          <h1
+          <motion.h1
             className="text-3xl font-bold text-gray-900 mb-0"
             style={{ fontFamily: "--font-serif" }}
+            layoutId={`work-item-title-${id}`}
           >
             {title}
-          </h1>
-          <div className="text-lg text-gray-600 mt-1">{desc}</div>
+          </motion.h1>
+          <motion.div
+            className="text-lg text-gray-600 mt-1"
+            layoutId={`work-item-desc-${id}`}
+          >
+            {desc}
+          </motion.div>
+          {coverImage && (
+            <motion.img
+              src={coverImage}
+              alt={title}
+              className="rounded-lg w-full mb-3"
+              loading="lazy"
+              layoutId={`work-item-cover-${id}`}
+            />
+          )}
           {workItem.body && <div className="mt-6">{workItem.body}</div>}
         </article>
       </motion.div>

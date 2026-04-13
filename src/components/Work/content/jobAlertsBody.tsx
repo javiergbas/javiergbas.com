@@ -6,7 +6,7 @@ import thumb3 from "../../../assets/work/job-alerts-3.png";
 
 export const JobAlertsBody = (
   <div>
-    <div className="space-y-1 border-t border-gray-200 pt-5 mb-5 text-sm leading-relaxed">
+    <div className="border-b border-gray-200 pb-5">
       <p className="not-prose">
         <span className="font-medium text-gray-900">Team:</span> 1 PM, 2
         engineers, 1 designer (me).
