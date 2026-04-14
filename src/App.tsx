@@ -11,7 +11,7 @@ export default function App() {
     <>
       <Hero />
 
-      <main className="max-w-3xl mx-auto px-8 md:px-6 py-24 space-y-24">
+      <main className="max-w-3xl mx-auto px-4 md:px-6 py-24 space-y-24">
         <Section>
           <div className="text-lg space-y-4 text-gray-600 leading-relaxed">
             <p>

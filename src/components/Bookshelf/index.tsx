@@ -44,7 +44,7 @@ const Bookshelf = () => {
         {/* Left fade + arrow */}
         <div
           aria-hidden="true"
-          className={`absolute -left-4 top-0 bottom-0 pt-[120px] w-12 bg-gradient-to-r from-white to-transparent z-10 flex items-start pt-4 pointer-events-none transition-opacity duration-200 ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
+          className={`absolute invisible sm:visible md:-left-4 top-0 bottom-0 pt-[120px] w-12 bg-gradient-to-r from-white to-transparent z-10 flex items-start pt-4 pointer-events-none transition-opacity duration-200 ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
         >
           <button
             onClick={() => scroll("left")}
@@ -62,12 +62,12 @@ const Bookshelf = () => {
           role="region"
           aria-label="Bookshelf — scroll to see more books"
           onScroll={updateScrollState}
-          className="flex overflow-x-auto gap-5 sm:gap-6 -mx-4 px-4 pt-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="w-[min(calc(100vw-32px),736px)] -mx-4 px-4 flex overflow-x-auto gap-5 sm:gap-6 pt-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {books.map((book) => (
             <div
               key={book.id}
-              className="shrink-0 w-[calc(50%-10px)] sm:w-[calc(25%-10px)] [scroll-snap-align:start]"
+              className="shrink-0 w-[calc(50%-32px)] sm:w-[calc(25%-10px)] [scroll-snap-align:start]"
             >
               <BookCard
                 book={book}
@@ -83,13 +83,13 @@ const Bookshelf = () => {
         {/* Right fade + arrow */}
         <div
           aria-hidden="true"
-          className={`absolute -right-4 top-0 bottom-0 pt-[120px] w-12 bg-gradient-to-l from-white to-transparent z-10 flex items-start pt-4 justify-end pointer-events-none transition-opacity duration-200 ${canScrollRight ? "opacity-100" : "opacity-0"}`}
+          className={`absolute invisible sm:visible -right-4 top-0 bottom-0 pt-[120px] w-12 bg-gradient-to-l from-white to-transparent z-10 flex items-start pt-4 justify-end pointer-events-none transition-opacity duration-200 ${canScrollRight ? "opacity-100" : "opacity-0"}`}
         >
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             aria-label="Scroll right"
-            className="pointer-events-auto w-8 h-8 -mr-4 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
+            className="pointer-events-auto w-8 h-8 ml-4 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400"
           >
             <ChevronRight size={16} />
           </button>
