@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
+import FindemLogo from "./components/FindemLogo";
 import Timeline from "./components/Timeline";
 import Work from "./components/Work";
 import Bookshelf from "./components/Bookshelf";
@@ -23,13 +24,14 @@ export default function App() {
               where the details matter.
             </p>
             <p>
-              These days I'm based in Madrid, working remotely for{" "}
+              These days I'm based in Madrid, working remotely at{" "}
               <a
                 href="https://findem.ai"
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-900 underline underline-offset-2 hover:text-gray-600 transition-colors"
               >
+                <FindemLogo />
                 Findem.ai
               </a>
               , and excited about what AI is changing in how we design and
