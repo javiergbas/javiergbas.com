@@ -5,7 +5,9 @@ const BookCard = ({ book, onClick }: { book: Book; onClick: () => void }) => (
   <motion.button
     layoutId={`card-${book.id}`}
     onClick={onClick}
-    className="group text-left w-full focus:outline-none cursor-pointer"
+    type="button"
+    aria-haspopup="dialog"
+    className="group text-left w-full cursor-pointer"
   >
     {/* Cover */}
     <motion.div

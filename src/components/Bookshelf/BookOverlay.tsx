@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { X } from "lucide-react";
 import { type Book, coverUrl } from "./types";
@@ -10,11 +10,14 @@ const BookOverlay = ({
   book: Book;
   onClose: () => void;
 }) => {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", handler);
+    closeButtonRef.current?.focus();
     document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", handler);
@@ -43,8 +46,9 @@ const BookOverlay = ({
       >
         {/* Close */}
         <button
+          ref={closeButtonRef}
           onClick={onClose}
-          className="absolute top-2 right-2 w-10 h-10 rounded-sm text-gray-600 bg-white hover:bg-slate-200 transition-colors cursor-pointer flex items-center justify-center focus:outline-none"
+          className="absolute top-2 right-2 w-10 h-10 rounded-sm text-gray-600 bg-white hover:bg-slate-200 transition-colors cursor-pointer flex items-center justify-center"
           aria-label="Close"
         >
           <X size={13} strokeWidth={2.5} />

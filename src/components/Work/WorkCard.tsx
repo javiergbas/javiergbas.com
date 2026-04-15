@@ -12,20 +12,29 @@ const WorkCard = ({
   const coverImage = coverUrl(workItem.id);
 
   return (
-    <motion.div
+    <motion.button
       key={`work-card-${workItem.id}`}
       layoutId={`work-item-${id}`}
-      className="rounded-lg cursor-pointer overflow-hidden"
+      className="rounded-lg cursor-pointer overflow-hidden text-left w-full"
       onClick={onClick}
+      type="button"
+      aria-haspopup="dialog"
+      whileHover="hovered"
     >
       {coverImage && (
-        <motion.img
-          src={coverImage}
-          alt={title}
-          className="w-full mb-3"
-          loading="lazy"
+        <motion.div
+          className="overflow-hidden mb-3"
           layoutId={`work-item-cover-${id}`}
-        />
+        >
+          <motion.img
+            src={coverImage}
+            alt={title}
+            className="w-full"
+            loading="lazy"
+            variants={{ hovered: { scale: 1.1 } }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          />
+        </motion.div>
       )}
       <div>
         <motion.h2
@@ -38,7 +47,7 @@ const WorkCard = ({
           {desc}
         </motion.div>
       </div>
-    </motion.div>
+    </motion.button>
   );
 };
 
