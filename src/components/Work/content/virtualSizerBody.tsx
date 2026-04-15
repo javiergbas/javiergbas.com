@@ -1,4 +1,3 @@
-import ContentHeading from "./ContentHeading";
 import VirtualSizerDemo from "./VirtualSizerDemo";
 import image1 from "../../../assets/work/virtual-sizer-1.png";
 
@@ -48,7 +47,7 @@ export const VirtualSizerBody = (
     </p>
 
     <div className="space-y-4">
-      <ContentHeading title="The challenge" />
+      <h2>The challenge</h2>
       <p>
         Getting an accurate measurement from a photo requires very specific
         conditions, and getting users to meet all of them is a UX problem as
@@ -77,7 +76,7 @@ export const VirtualSizerBody = (
     </div>
 
     <div className="space-y-4">
-      <ContentHeading title="Prototyping to learn" />
+      <h2>Prototyping to learn</h2>
       <img
         src={image1}
         alt="Job alerts scroll issue"
@@ -101,7 +100,7 @@ export const VirtualSizerBody = (
       </p>
     </div>
 
-    <ContentHeading title="Play with it" />
+    <h2>Play with it</h2>
     <p className="text-gray-600">
       You can play with this prototype used in the process:
     </p>

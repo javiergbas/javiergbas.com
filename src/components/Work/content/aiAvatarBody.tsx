@@ -1,4 +1,3 @@
-import ContentHeading from "./ContentHeading";
 import AiAvatarDemo from "./AiAvatarDemo";
 import AiAvatarDemo2 from "./aiAvatarDemo2";
 import aiAvatar1 from "../../../assets/work/ai-avatar-1.png";
@@ -38,7 +37,7 @@ export const AiAvatarBody = (
       system.
     </p>
 
-    <ContentHeading title="The challenge" />
+    <h2>The challenge</h2>
     <p>
       AI agents on job boards are new territory. Job seekers have been trained
       by years of unhelpful chatbots to ignore or distrust anything that looks
@@ -51,7 +50,7 @@ export const AiAvatarBody = (
       Design and motion had a central role in making that happen.
     </p>
 
-    <ContentHeading title="The avatars" />
+    <h2>The avatars</h2>
     <p>
       The avatar is the first thing a user sees. It needed to communicate
       personality at a glance: alive, attentive, and a little warm. A circular

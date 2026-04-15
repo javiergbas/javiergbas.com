@@ -1,4 +1,3 @@
-import ContentHeading from "./ContentHeading";
 import scrollIssue from "../../../assets/work/job-alerts-scroll-issue.png";
 import thumb1 from "../../../assets/work/job-alerts-1.png";
 import thumb2 from "../../../assets/work/job-alerts-2.png";
@@ -17,7 +16,7 @@ export const JobAlertsBody = (
       </p>
     </div>
 
-    <ContentHeading title="Introduction" />
+    <h2>Introduction</h2>
     <p className="text-xl font-medium text-gray-800 leading-relaxed my-10 px-10">
       Job alerts allow job seekers to subscribe to get email alerts when new
       relevant jobs are posted. A first iteration of this feature was launched
@@ -33,7 +32,7 @@ export const JobAlertsBody = (
       companies are aggregated automatically.
     </p>
 
-    <ContentHeading title="Problem Statement" level="h3" />
+    <h3>Problem Statement</h3>
     <p>
       The first iteration was working – users could subscribe and get email
       alerts – but the UX was not good enough, we got early feedback about it
@@ -53,7 +52,7 @@ export const JobAlertsBody = (
       </li>
     </ul>
 
-    <ContentHeading title="Users & Audience" level="h3" />
+    <h3>Users & Audience</h3>
     <p>
       The main user persona in this project is the job seeker, professionals
       that are looking for a new professional opportunity.
@@ -67,7 +66,7 @@ export const JobAlertsBody = (
       about users, traffic and engagement.
     </p>
 
-    <ContentHeading title="Scope & Constrains" level="h3" />
+    <h3>Scope & Constrains</h3>
     <p>
       We had two weeks to work on the design of this first iteration of
       improvements.
@@ -78,11 +77,8 @@ export const JobAlertsBody = (
       their brand.
     </p>
 
-    <ContentHeading title="Design Process" />
-    <ContentHeading
-      level="h3"
-      title="1. Research: Identifying the main issues"
-    />
+    <h2>Design Process</h2>
+    <h3>1. Research: Identifying the main issues</h3>
     <p>
       The project motivation and goals were clear, so it was time to start with
       research.
@@ -120,7 +116,7 @@ export const JobAlertsBody = (
       <figcaption>Job alerts scroll issue</figcaption>
     </figure>
 
-    <ContentHeading level="h3" title="2. Synthesis" />
+    <h3>2. Synthesis</h3>
     <p className="text-xl font-medium text-gray-800 leading-relaxed my-10 px-10">
       Analyzing data and feedback from different sources helped us understand
       what we should focus on. Once the main issues were clear, we detected the
@@ -151,7 +147,7 @@ export const JobAlertsBody = (
       </li>
     </ul>
 
-    <ContentHeading level="h3" title="3. Ideation" />
+    <h3>3. Ideation</h3>
     <p>
       Once we had a clear understanding of what we wanted to focus on and why,
       it was time to start generating ideas and testing them.
@@ -220,7 +216,7 @@ export const JobAlertsBody = (
       </div>
     </div>
 
-    <ContentHeading level="h3" title="4. Implementation" />
+    <h3>4. Implementation</h3>
     <p className="text-xl font-medium text-gray-800 leading-relaxed my-10 px-10">
       Organizing work in small stories allowed us to start adding value fast.
     </p>
@@ -234,7 +230,7 @@ export const JobAlertsBody = (
       there were few surprises during the implementation phase.
     </p>
 
-    <ContentHeading title="Outcomes & Lessons Learned" />
+    <h2>Outcomes & Lessons Learned</h2>
     <p>
       During these 2 weeks we got the designs ready to be implemented, including
       early validation with prototypes and engineering reviews.
@@ -249,7 +245,7 @@ export const JobAlertsBody = (
       weeks after releasing every change:
     </p>
 
-    <ContentHeading title="Impact Metrics" level="h3" />
+    <h3>Impact Metrics</h3>
     <div className="flex gap-4 my-8 mx-auto">
       <div className="w-full border border-gray-200 p-6 rounded">
         <div className="text-4xl font-medium text-gray-900">4.4%</div>
@@ -265,7 +261,7 @@ export const JobAlertsBody = (
       confusing to some users, it will be very helpful for the next iteration.
     </p>
 
-    <ContentHeading title="Lessons Learned" level="h3" />
+    <h3>Lessons Learned</h3>
     <p>
       Having a clear vision of what's being done, and great team collaboration
       are crucial for creating successful products. During this second

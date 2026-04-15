@@ -1,4 +1,3 @@
-import ContentHeading from "./ContentHeading";
 import getroFlow1 from "../../../assets/work/getro-flow-1.png";
 import getroFlow2 from "../../../assets/work/getro-flow-2.png";
 
@@ -15,7 +14,7 @@ export const GetroFlowBody = (
       </p>
     </div>
 
-    <ContentHeading title="Problem Statement" />
+    <h2>Problem Statement</h2>
     <p>
       Hiring leads at early stage projects have too little time, poor (or
       nonexistent!) tools and often too few skills, to hire well – let alone
@@ -24,7 +23,7 @@ export const GetroFlowBody = (
       money, and motivation along the way.
     </p>
 
-    <ContentHeading title="Process" />
+    <h2>Process</h2>
     <p>
       During the whole quarter we did several research projects working close
       with 8 people responsible for hiring at early-stage fast-growing
@@ -37,7 +36,7 @@ export const GetroFlowBody = (
       validate interest in the market.
     </p>
 
-    <ContentHeading title="Outcomes & Lessons Learned" />
+    <h2>Outcomes & Lessons Learned</h2>
     <p>
       After a few weeks interviewing potential customers and prototyping
       different solutions we decided not to move forward with the project.
