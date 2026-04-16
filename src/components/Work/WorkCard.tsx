@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion } from "motion/react";
 import { type WorkItem, coverUrl } from "./types";
 
@@ -6,17 +7,19 @@ const WorkCard = ({
   onClick,
 }: {
   workItem: WorkItem;
-  onClick: () => void;
+  onClick: (rect: DOMRect) => void;
 }) => {
+  const ref = useRef<HTMLButtonElement>(null);
   const { id, title, desc } = workItem;
   const coverImage = coverUrl(workItem.id);
 
   return (
     <motion.button
+      ref={ref}
       key={`work-card-${workItem.id}`}
       layoutId={`work-item-${id}`}
       className="rounded-lg cursor-pointer overflow-hidden text-left w-full"
-      onClick={onClick}
+      onClick={() => onClick(ref.current!.getBoundingClientRect())}
       type="button"
       aria-haspopup="dialog"
       whileHover="hovered"

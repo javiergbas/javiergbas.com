@@ -43,6 +43,7 @@ const AnimatedCard = ({
 
 const Work = () => {
   const [selected, setSelected] = useState<WorkItem | null>(null);
+  const [selectedRect, setSelectedRect] = useState<DOMRect | null>(null);
 
   return (
     <Section title="Some stuff I've worked on">
@@ -51,8 +52,9 @@ const Work = () => {
           <AnimatedCard key={workItem.id} index={index}>
             <WorkCard
               workItem={workItem}
-              onClick={() => {
+              onClick={(rect) => {
                 track("work_item_open", { id: workItem.id });
+                setSelectedRect(rect);
                 setSelected(workItem);
               }}
             />
@@ -63,7 +65,11 @@ const Work = () => {
       <AnimatePresence>
         {/* Modal */}
         {selected && (
-          <WorkOverlay workItem={selected} onClose={() => setSelected(null)} />
+          <WorkOverlay
+            workItem={selected}
+            selectedRect={selectedRect}
+            onClose={() => setSelected(null)}
+          />
         )}
       </AnimatePresence>
     </Section>

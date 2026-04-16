@@ -57,6 +57,14 @@ export const AiAvatarBody = (
       face with expressive eyes and a simple smile — friendly without being
       cartoonish.
     </p>
+
+    <div className="flex flex-column md:flex-row gap-4 [&>*]:flex-1">
+      <AiAvatarDemo />
+      <AiAvatarDemo2 />
+    </div>
+
+    <p className="not-prose text-gray-500 text-sm mt-4">Animated versions</p>
+
     <figure>
       <img
         src={aiAvatar1}
@@ -74,12 +82,5 @@ export const AiAvatarBody = (
       />
       <figcaption>Avatars used in different contexts.</figcaption>
     </figure>
-
-    <div className="flex flex-column md:flex-row gap-4 [&>*]:flex-1">
-      <AiAvatarDemo />
-      <AiAvatarDemo2 />
-    </div>
-
-    <p className="not-prose text-gray-500 text-sm mt-4">Animated versions</p>
   </div>
 );
