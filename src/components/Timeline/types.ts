@@ -11,7 +11,7 @@ export const entries: Entry[] = [
   {
     date: "Sep 2004",
     emoji: "👨‍💻",
-    title: "Started sudying software engineering",
+    title: "Started studying software engineering",
     type: "work",
   },
   { date: "Sep 2009", emoji: "🇨🇿", title: "Moved to Prague", type: "life" },
